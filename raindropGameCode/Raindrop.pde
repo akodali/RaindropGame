@@ -10,25 +10,28 @@ class Raindrop {
     loc = new PVector(x, y);
     vel = new PVector(0, random(.01));
     acc = new PVector(0, random(.001));
-    c = color(0, random(100), random(100,255));
+    c = color(0, 200, 255);
   }
-
+  //display circle
   void display() {
     fill(c);
     noStroke();
     ellipse(loc.x, loc.y, diam, diam);
   }
+  //add velocity and acceleration so that they fall
   void fall() {
     vel.add(acc);
     loc.add(vel);
   }
+  //create a boolean that will determine if the raindrops are in contact with the ball
   boolean isInContactWith(PVector m) {
-    if (m.dist(loc)<diam/2) {
+    if (m.dist(loc) < b.diam/2 + diam/2) {
       return true;
     } else {
       return false;
     }
   }
+  //send the circle back to the top
   void reset() {
     loc.y =0-diam/2;
     vel.y = .01;
