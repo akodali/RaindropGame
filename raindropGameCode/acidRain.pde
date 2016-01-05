@@ -10,7 +10,7 @@ class acidRain {
     loc = new PVector(x, y);
     vel = new PVector(0, random(.01));
     acc = new PVector(0, random(.001));
-    c = color(255);
+    c = color(0);
   }
   //display circle
   void display() {
