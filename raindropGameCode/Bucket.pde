@@ -19,6 +19,6 @@ class Bucket{
  }
  //update the location of the Bucket
  void update(){
-   loc.set(mouseX,mouseY);
+   loc.set(mouseX,height);
  }
 }

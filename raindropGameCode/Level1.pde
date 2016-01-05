@@ -2,7 +2,7 @@ void Level1() {
   if (mode == 1) {
     background(0,200,255);
     if (rain.size() < 100) {    //if there are less than 100 raindrops drawn...
-      rain.add(new Raindrop(random(width), 0));    //...add raindrops to the array list
+      rain.add(new Raindrop(random(width), 100));    //...add raindrops to the array list
     }
     b.display();   //display bucket 
     b.update();    //update the location of the bucket
@@ -17,8 +17,8 @@ void Level1() {
         r.reset();                           //if it does, reset the raindrop
       }
     }
-    if (frameCount >= 100) {
-      if (acid.size() <= 50) {
+    if (frameCount >= 10) {
+      if (acid.size() <= 10) {
         acid.add(new acidRain(random(width), 0));
       }
       for (int i= acid.size()-1; i >= 0; i--) {
