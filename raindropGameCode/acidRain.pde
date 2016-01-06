@@ -8,8 +8,8 @@ class acidRain {
   acidRain(float x, float y, float a ) {
     diam = 25;
     loc = new PVector(x, y);
-    vel = new PVector(0, random(.01));
-    acc = new PVector(0, random(a));
+    vel = new PVector(0, random(.05));
+    acc = new PVector(0, random(0,a));
     c = color(0);
   }
   //display circle
@@ -23,9 +23,9 @@ class acidRain {
     vel.add(acc);
     loc.add(vel);
   }
-  //create a boolean that will determine if the raindrops are in contact with the ball
+  //create a boolean that will determine if the raindrops are in contact with the bucket
    boolean isInContactWith(PVector m) {
-    if (loc.y + diam/2 >= m.y - 65 && loc.y +diam/2 <= m.y -60 && m.x-50 < loc.x && m.x+50 > loc.x) {
+    if (loc.y + diam/2 >= m.y - 65 && loc.y +diam/2 <= m.y -60 && m.x-60 < loc.x && m.x+60 > loc.x) {
         return true;
       }
      else {
@@ -35,6 +35,5 @@ class acidRain {
   //send the circle back to the top
   void reset() {
     loc.y =0-diam/2;
-    vel.y = .01;
   }
 }

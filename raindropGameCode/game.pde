@@ -12,15 +12,15 @@ void game() {
       r.display();      //display the raindrop
       if (r.isInContactWith(b.loc)) {      //check to see if the raindrop is in contact with the point represented by the PVector called mouse
         r.reset();        //if it is, reset the raindrop
-        score ++;
+        score ++;    //increase the score
       }
       if (r.loc.y > height + r.diam/2) {     //check to see if the raindrop goes below the bottom of the screen
         r.reset();                           //if it does, reset the raindrop
       }
     }
-    if (frameCount >= 50) {
-      if (acid.size() <= alimit) {
-        acid.add(new acidRain(random(width), 0, .001));
+    if (frameCount >= 50) {      //start the acide rain after some time
+      if (acid.size() <= alimit) {    //limit the amount of acid rain
+        acid.add(new acidRain(random(width), 0, .001));    //add acid rain
       }
       for (int i= acid.size()-1; i >= 0; i--) {
         acidRain a = acid.get(i); 
@@ -28,7 +28,7 @@ void game() {
         a.display();      //display the raindrop
         if (a.isInContactWith(b.loc)) {      //check to see if the raindrop is in contact with the point represented by the PVector called mouse
           a.reset();                         //if it is, reset the raindrop
-          mode =2;
+          mode =2;    //game over if acid rain is in contact with the bucket
         }
         if (a.loc.y > height + a.diam/2) {     //check to see if the raindrop goes below the bottom of the screen
           a.reset();                           //if it does, reset the raindrop

@@ -1,6 +1,5 @@
 void Score() {
-  //    line(0,100,width,100);
-  if (mode != 0 && mode!=2) {
+  if (mode != 0 && mode!=2) {    //if the game is playing, show the score
     noStroke();
     fill(100);
     rect(0, 0, width, 125);

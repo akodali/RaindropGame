@@ -3,7 +3,7 @@ class Bucket{
   PVector loc;
   
   Bucket(){    //make a constructor
-    Bucket = loadImage("bucket.jpg");
+    Bucket = loadImage("bucket.jpg");    //load image
     loc = new PVector();
   }
  //display the Bucket

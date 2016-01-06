@@ -12,8 +12,8 @@ void startScreen() {
     text(description, width/2, height/2 - 100);
     textSize(100);
     text("Click to begin", width/2, 2*height/3);
-    if (mousePressed) {
-      mode ++;
+    if (mousePressed) {    //if the mouse is pressed
+      mode ++;    //start the game
     }
   }
 }
