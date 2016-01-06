@@ -5,11 +5,11 @@ class acidRain {
   color c;
 
   //make a constructor
-  acidRain(float x, float y ) {
+  acidRain(float x, float y, float a ) {
     diam = 25;
     loc = new PVector(x, y);
     vel = new PVector(0, random(.01));
-    acc = new PVector(0, random(.001));
+    acc = new PVector(0, random(a));
     c = color(0);
   }
   //display circle
@@ -24,10 +24,11 @@ class acidRain {
     loc.add(vel);
   }
   //create a boolean that will determine if the raindrops are in contact with the ball
-  boolean isInContactWith(PVector m) {
-    if (m.dist(loc) < b.diam/2 + diam/2) {
-      return true;
-    } else {
+   boolean isInContactWith(PVector m) {
+    if (loc.y + diam/2 >= m.y - 65 && loc.y +diam/2 <= m.y -60 && m.x-50 < loc.x && m.x+50 > loc.x) {
+        return true;
+      }
+     else {
       return false;
     }
   }

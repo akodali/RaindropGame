@@ -5,12 +5,12 @@ class Raindrop {
   color c;
 
   //make a constructor
-  Raindrop(float x, float y ) {
+  Raindrop(float x, float y, float a) {
     diam = 25;
     loc = new PVector(x, y);
     vel = new PVector(0, random(.01));
-    acc = new PVector(0, random(.001));
-    c = color(255);
+    acc = new PVector(0, random(a));
+    c = color(0, 200, 255);
   }
   //display circle
   void display() {
@@ -25,9 +25,10 @@ class Raindrop {
   }
   //create a boolean that will determine if the raindrops are in contact with the ball
   boolean isInContactWith(PVector m) {
-    if (m.dist(loc) < b.diam/2 + diam/2) {
-      return true;
-    } else {
+    if (loc.y + diam/2 >= m.y - 65 && loc.y +diam/2 <= m.y -60 && m.x-50 < loc.x && m.x+50 > loc.x) {
+        return true;
+      }
+     else {
       return false;
     }
   }
