@@ -20,7 +20,7 @@ void game() {
     }
     if (frameCount >= 50) {      //start the acide rain after some time
       if (acid.size() <= alimit) {    //limit the amount of acid rain
-        acid.add(new acidRain(random(width), 0, .001));    //add acid rain
+        acid.add(new acidRain(random(width), 0, .005));    //add acid rain
       }
       for (int i= acid.size()-1; i >= 0; i--) {
         acidRain a = acid.get(i); 
